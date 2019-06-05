@@ -1,0 +1,6 @@
+{
+    "name": "incoming",
+    "actions": [
+        "send"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "name": "voting",
+    "type": "twilio",
+    "config": {
+        "sid": "AC0dac1b96e485e3c29f96305070871f10"
+    },
+    "secret_config": {
+        "auth_token": "authsecret"
+    },
+    "version": 1
+}
