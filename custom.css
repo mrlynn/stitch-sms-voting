@@ -1,0 +1,49 @@
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #13AA52 !important;
+    border-color: #13AA52 !important;
+}
+.jumbotron {
+    background-color: #B8C4C2 !important;
+}
+.jumbotron h1 h2 {
+    color: #fffff
+}
+
+.container {
+    background-color: #fefefe !important;
+}
+
+html,
+body {
+  height:100%;
+  width:100%;
+ 
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+.background {
+  background-color: #21313C;
+
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/* === page-container ===*/
+.page-container {
+  margin-bottom: 3vh;
+  margin-top: 2vh;
+  margin-right: 0vw;
+  margin-left: 0vw;
+
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.container {
+    background-color: #B8C4C2;
+
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
