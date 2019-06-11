@@ -10,21 +10,36 @@ This repository was created to demonstrate the ability to integrate Twilio and M
 
 ## Components
 
-<details><summary>Front End</summary>
+<details><summary>Frontend</summary>
 <p>
 
 ### HTML - dashboard.html
 
+The `dashboard.html` file is hosted using MongoDB Stitch's static hosting capabilities.
+
 </p>
 </details>
 
-<details><summary>Stitch Service - Twilioo</summary>
+<details><summary>Backend</summary>
 <p>
 
-### Incoming Webhook - vote.js
+### Service: Twilio - Incoming Webhook - vote.js
 
 This is the code that executes when an sms text message is sent from Twilio to the API created in Stitch.
 
+### Value: twilioNumber
+
+Create a value to store the twilio telephone number you will use.
+
 </p>
 </details>
 
+<details><summary>Infrastructure</summary>
+<p>
+
+### MongoDB Servers - MongoDB Atlas
+
+MongoDB Databases are hosted in MongoDB Atlas.
+
+</p>
+</details>
