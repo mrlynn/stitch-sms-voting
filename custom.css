@@ -3,13 +3,74 @@
     background-color: #13AA52 !important;
     border-color: #13AA52 !important;
 }
-.jumbotron {
-    background-color: #B8C4C2 !important;
+.pollStateON, .pollStateON:hover, .pollStateON:active, .pollStateON:visited {
+  background-color: #13AA52 !important;
+  border-color: #13AA52 !important;
 }
-.jumbotron h1 h2 {
-    color: #fffff
+.pollStateOFF, .pollStateOFF:hover, .pollStateOFF:active, .pollStateOFF:visited {
+  background-color: #d42e2e !important;
+  border-color: #d42e2e !important;
+}
+.logo {
+  margin-top: 14px;
+  margin-left: 24px;
+  max-width: 400px;
+  margin-bottom: 24px;
 }
 
+.jumbotron {
+  background-image: url(./images/bg_pattern.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #273742;
+  border-radius: .9rem;
+
+ }
+
+.infohead {
+  font-family: 'din-regularregular';
+
+  font-weight: normal;
+  font-size: 44px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 64px;
+}
+
+@font-face {
+  font-family: 'din-regularregular';
+  src: url('fonts/din-regular-webfont.woff2') format('woff2'),
+       url('fonts/din-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.infonumber {
+  font-family: DINOT-Bold;
+  font-size: 64px;
+  color: #FFDD49;
+  text-align: center;
+  line-height: 64px;
+
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.votes {
+  font-size: 66px;
+  border-top: 6px !important;
+  border-left: 6px;
+  border-right: 6px;
+  border-bottom: 6px;
+  color: #FFDD49;
+  background-color: #273742;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+}
 .container {
     background-color: #fefefe !important;
 }
@@ -22,8 +83,11 @@ body {
   overflow-y: visible;
   overflow-x: hidden;
 }
+.button {
+  mid-width: 31%;
+}
 .background {
-  background-color: #21313C;
+  background-color: #ffffff;
 
   min-height: 100vh;
   min-width: 100vw;

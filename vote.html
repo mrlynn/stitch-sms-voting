@@ -1,0 +1,65 @@
+<HTML>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+
+</head>
+<body class="background" onLoad="displayVotesOnLoad()">
+    <div class="page-container">
+        <div class="container img-rounded">
+            <div class="jumbotron">
+                <div class="logo"><img class="logo" src="images/hackathon_logo.png"></div>
+                <p class="infohead">MongoDB World Hackathon</p>
+                <p class="infohead">Text "one", "two", or "three" to:</p>
+                <p class="infonumber">+1(201) 80-MONGO<br>+1(201) 806-6466</p><p class="infohead">to cast your vote.</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-xl text-center">
+                    <div class="votes" id="votesONE">
+                    </div>
+                    <form action="#" method="POST" onsubmit="addVote(1);">
+                      <button class="btn btn-success btn-lg">
+                        <p>
+                          <p>VOTE FOR TEAM ONE<p>
+                      </button>
+                    </form>
+                  </div>
+                <div class="col-sm"><p></p></div>
+
+                <div class="col-xl text-center">
+                    <div class="votes" id="votesTWO">
+                    </div>
+                    <form action="#" method="post" onsubmit="addVote(2);">
+                      <button class="btn btn-success btn-lg">
+                        <p>
+                          <p>VOTE FOR TEAM TWO<p>
+                      </button>
+                    </form>
+                  </div>
+                <div class="col-sm"><p></p></div>
+                <div class="col-xl text-center">
+                    <div class="votes" id="votesTHREE">
+                    </div>
+                    <form action="#" method="post" onsubmit="addVote(3);">
+                      <button class="btn btn-success btn-lg">
+                        <p>
+                          <p>VOTE FOR TEAM THREE<p>
+                      </button>
+                    </form>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    
+      <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.3.1/stitch.js"></script>
+    
+      <script src="script.js"></script>
+    </body>
+  
+  </html>
