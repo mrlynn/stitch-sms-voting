@@ -1,0 +1,83 @@
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #13AA52 !important;
+  border-color: #13AA52 !important;
+}
+
+.logo {
+margin-top: 36px;
+margin-left: 36px;
+max-width: 400px;
+margin-bottom: 36px;
+}
+
+.jumbotron {
+background-image: url(../../images/bg_pattern.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-color: #273742;
+border-radius: .9rem;
+
+}
+
+.infohead {
+font-family: DINOT-Bold;
+font-weight: normal;
+font-size: 44px;
+color: #FFFFFF;
+text-align: center;
+line-height: 64px;
+}
+
+.infonumber {
+font-family: DINOT-Bold;
+font-size: 64px;
+color: #FFDD49;
+text-align: center;
+line-height: 64px;
+}
+.votes {
+font-size: 22px;
+border-top: 4px !important;
+border-left: 4px;
+border-right: 4px;
+border-bottom: 4px;
+}
+.container {
+  background-color: #fefefe !important;
+}
+
+html,
+body {
+height:100%;
+width:100%;
+
+overflow-y: visible;
+overflow-x: hidden;
+}
+.background {
+background-color: #ffffff;
+
+min-height: 100vh;
+min-width: 100vw;
+}
+
+/* === page-container ===*/
+.page-container {
+margin-bottom: 3vh;
+margin-top: 2vh;
+margin-right: 0vw;
+margin-left: 0vw;
+
+padding-right: 0px;
+padding-left: 0px;
+}
+.container {
+  background-color: #B8C4C2;
+
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

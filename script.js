@@ -15,11 +15,12 @@ const mongodb = client.getServiceClient(
 // Get a reference to the blog database
 const db = mongodb.db("worldVoting");
 
-function displayVotesOnLoad() {
-  client.auth
+async function displayVotesOnLoad() {
+   await client.auth
     .loginWithCredential(new stitch.AnonymousCredential())
-    .then(displayVotes)
-    .catch(console.error);
+    .then(async rtn => {
+        var baz = await displayVotes();
+    });
 }
 
 function runOnce() {
@@ -29,46 +30,23 @@ function runOnce() {
   db.collection("votes").insert({ team: "three", votes: 0, order: 2 });
 }
 
-function displayVotes() {
-  getTeamNames;
-  getPollState;
+async function displayVotes() {
   await db.collection("votes")
     .find({})
     .asArray()
-    .then(docs => {
-      console.log(docs);
-      getTeamNames;
-      docs.forEach(buildHTML);
+    .then(async docs => {
+      await docs.forEach(buildHTML);
     });
 }
 
+function buildHTML(team) {
+    const d = "<div>" + team.votes + "</div>";
+    document.getElementById("votes" + team.team.toUpperCase()).innerHTML = d;
+}
 function getPollState() {
     client.callFunction("pollState").then(pollState => {
         console.log(result) 
         if (pollState == "open") {
-            document.getElementById("pollState").innerText = 'Close Poll';
-        }
-        else {
-            document.getElementById("pollState").innerText = 'Open Poll';
-        }
-    });
-}
-
-function openPoll() {
-    client.callFunction("openPoll").then(pollState => {
-        console.log(result) 
-        if (pollState == "yes") {
-            document.getElementById("pollState").innerText = 'Close Poll';
-        }
-        else {
-            document.getElementById("pollState").innerText = 'Open Poll';
-        }
-    });
-}
-function togglePoll() {
-    client.callFunction("togglePoll").then(pollState => {
-        console.log(result) 
-        if (pollState == "yes") {
             document.getElementById("pollState").innerText = 'Close Poll';
         }
         else {
@@ -102,45 +80,45 @@ function getTeamNames() {
     });
 }
 
-function buildHTML(team) {
-  const d = "<div>" + team.votes + "</div>";
-  document.getElementById("votes" + team.team.toUpperCase()).innerHTML = d;
-}
-
-function addVote(team) {
-  client.auth
+async function addVote(team) {
+  await client.auth
     .loginWithCredential(new stitch.AnonymousCredential())
-    .then(displayVotes)
-    .catch(console.error);
+    .then(async rtn=> {
+        await displayVotes;
+        switch (team) {
+            case 1:
+            case "1":
+            case "one":
+              team = "one";
+              break;
+            case 2:
+            case "2":
+            case "two":
+              team = "two";
+              break;
+            case 3:
+            case "3":
+            case "three":
+              team = "three";
+              break;
+            default:
+              console.log("Invalid team");
+              return false;
+          }
+          console.log("team: " + team);
+          console.log("Voter " + client.auth.user.id);
 
-  switch (team) {
-    case 1:
-    case "1":
-    case "one":
-      team = "one";
-      break;
-    case 2:
-    case "2":
-    case "two":
-      team = "two";
-      break;
-    case 3:
-    case "3":
-    case "three":
-      team = "three";
-      break;
-    default:
-      console.log("Invalid team");
-      return false;
-  }
-  console.log("team: " + team);
-  if (team === "one" || team === "two" || team === "three") {
-    console.log("Client: ", client.auth.user.id);
-      db.collection("votes").updateOne({"team": team}, {
-        $inc: {"votes": 1}
-      }, {upsert: true});
-  } else {
-    console.log("VOTE FOR Invalid team");
-    return false;
-  }
-}
+          if (team === "one" || team === "two" || team === "three") {
+               await db.collection("votes").updateOne({"team": team}, {
+                $inc: {"votes": 1}
+              }, {upsert: true}).then(async voter=> {
+                console.log("Voter " + client.auth.user.id);
+                await db.collection("voters").insertOne({"voter": client.auth.id, "team": team});
+              });
+          } else {
+            console.log("VOTE FOR Invalid team");
+            return false;
+          }
+    })
+    .catch(console.error);
+};

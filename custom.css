@@ -12,10 +12,9 @@
   border-color: #d42e2e !important;
 }
 .logo {
-  margin-top: 14px;
   margin-left: 24px;
-  max-width: 400px;
-  margin-bottom: 24px;
+  max-width: 280px;
+  margin-bottom: 0px;
 }
 
 .jumbotron {
@@ -25,6 +24,7 @@
   background-size: cover;
   background-color: #273742;
   border-radius: .9rem;
+  max-height: 420px;
 
  }
 
@@ -60,7 +60,7 @@
 }
 
 .votes {
-  font-size: 66px;
+  font-size: 140px;
   border-top: 6px !important;
   border-left: 6px;
   border-right: 6px;
